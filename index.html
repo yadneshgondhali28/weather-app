@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Weather App - Project</title>
+    <!-- css -->
+    <link rel="stylesheet" href="style.css" />
+    <!-- fonts link -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+      rel="stylesheet"
+    />
+    <!-- icons link -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+      integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+  </head>
+  <body>
+    <main>
+      <section class="card">
+        <!-- search -->
+        <div class="search">
+          <input
+            type="text"
+            id="input"
+            name="city-name"
+            placeholder="enter your city name"
+            spellcheck="false"
+          />
+          <button class="search-btn" type="submit">
+            <i class="fa-solid fa-magnifying-glass-location"></i>
+          </button>
+        </div>
+        <!-- <div class="error-msg">city name cannot be blank.</div> -->
+
+        <!-- weather - desc -->
+        <div class="weather">
+          <!-- weather-img -->
+          <div class="weather-img">
+            <img
+              class="weather-icon"
+              src="Assets/imgs/noWeather.svg"
+              alt="sun img"
+            />
+          </div>
+
+          <!-- weather - temperature -->
+          <h2 class="temp">--&deg;C</h2>
+
+          <!-- city name -->
+          <h3 class="city">---</h3>
+
+          <!-- weather details -->
+          <div class="details">
+            <!-- left -->
+            <div class="left">
+              <div class="humidity-img">
+                <img src="Assets/imgs/humidity.svg" alt="humidity" />
+              </div>
+              <div>
+                <p class="humidity">--%</p>
+                <p>Humidity</p>
+              </div>
+            </div>
+            <!-- right -->
+            <div class="right">
+              <div class="wind-img">
+                <img src="Assets/imgs/wind.svg" alt="wind speed" />
+              </div>
+              <div>
+                <p class="wind-speed">-- km/hr</p>
+                <p>Wind Speed</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+    <!-- javascript -->
+    <script src="script.js"></script>
+  </body>
+</html>

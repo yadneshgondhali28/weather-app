@@ -1,0 +1,165 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "poppins", sans-serif;
+}
+
+html,
+body {
+  width: 100%;
+  height: 100%;
+  font-size: 16px;
+}
+
+main {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.card {
+  width: 90vw;
+  max-width: 500px;
+  min-width: 300px;
+  background: rgb(0, 183, 255);
+  border: 2px solid rgb(0, 183, 255);
+  padding: 2rem;
+  border-radius: 16px;
+  text-align: center;
+  box-shadow: 0 2px 30px 6px rgba(0, 0, 0, 0.4);
+}
+
+.search {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 0 0 3rem;
+}
+
+.search input {
+  width: calc(100% - 20%);
+  font-size: 1rem;
+  padding: 0.7em 1em;
+  border-radius: 30px;
+  color: rgb(0, 183, 255);
+  border: 2px solid rgb(0, 183, 255);
+  outline: none;
+  text-transform: capitalize;
+}
+
+/* .error-msg {
+  display: none;
+  font-size: 0.9rem;
+  font-style: italic;
+  background-color: red;
+  padding: 0.2rem 0.6rem;
+  border-radius: 5px;
+  color: white;
+  margin: 0 0 2rem;
+} */
+
+.search input:focus,
+.search-btn:focus {
+  outline: 3px solid white;
+  outline-offset: 2px;
+}
+
+.search-btn {
+  width: 50px;
+  height: 50px;
+  background: white;
+  border: 2px solid rgb(0, 183, 255);
+  border-radius: 50%;
+  color: rgb(0, 183, 255);
+  font-size: 1.6rem;
+  cursor: pointer;
+}
+
+.weather-img {
+  display: inline-block;
+  position: relative;
+}
+
+.weather-icon {
+  margin: 0 0 1.3rem;
+  width: 10rem;
+}
+
+.weather-img::before {
+  content: "";
+  width: 10.5rem;
+  height: 10.5rem;
+  background-color: rgba(255, 255, 255, 0.21);
+  border-radius: 50%;
+  position: absolute;
+  top: -0.3rem;
+  left: -0.3rem;
+  z-index: 1;
+}
+
+.temp,
+.city {
+  color: white;
+  font-size: 3rem;
+  font-weight: 600;
+}
+
+.city {
+  font-size: 1.5rem;
+  font-weight: 500;
+}
+
+.details {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 2rem 0 0;
+}
+
+.left,
+.right {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.left img,
+.right img {
+  width: 3rem;
+}
+
+.left p,
+.right p {
+  text-align: left;
+  color: white;
+  font-size: 1.35rem;
+  word-break: break-all;
+}
+
+.left p:not(:first-child),
+.right p:not(:first-child) {
+  color: white;
+  font-size: 1rem;
+}
+
+.humidity-img,
+.wind-img {
+  position: relative;
+}
+
+.humidity-img::before,
+.wind-img::before {
+  content: "";
+  width: 3.4rem;
+  height: 3.4rem;
+  background-color: rgba(255, 255, 255, 0.21);
+  border-radius: 50%;
+  position: absolute;
+  top: -2px;
+  left: -4px;
+}
