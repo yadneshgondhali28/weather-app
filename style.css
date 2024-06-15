@@ -37,7 +37,7 @@ main {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin: 0 0 3rem;
+  margin: 0 0 1.5rem;
 }
 
 .search input {
@@ -51,16 +51,25 @@ main {
   text-transform: capitalize;
 }
 
-/* .error-msg {
-  display: none;
-  font-size: 0.9rem;
+.error-msg {
+  height: 0;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.1rem;
   font-style: italic;
+  font-weight: 500;
   background-color: red;
-  padding: 0.2rem 0.6rem;
   border-radius: 5px;
   color: white;
-  margin: 0 0 2rem;
-} */
+  margin: 0 0 1.5rem;
+  transition: .2s all linear;
+}
+
+.show-error {
+  height: 4rem;
+}
 
 .search input:focus,
 .search-btn:focus {

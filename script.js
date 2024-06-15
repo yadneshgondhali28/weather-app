@@ -1,8 +1,3 @@
-// fetch('https://api.openweathermap.org/data/2.5/weather?q=London&appid=553f9fb85e24973256385af7dd0a1081')
-//   .then(response => response.json())
-//   .then(data => console.log(data))
-//   .catch(error => console.log('Error:', error));
-
 
 function main() {
 
@@ -15,10 +10,12 @@ function main() {
   // validating input field
   function inputValidation() {
     if (searchInput.value === "") {
-      alert("city name cannot be blank.");
+      showErrorMessage("city name cannot be blank.");
     }
     else {
-      fetchWeatherApi(searchInput.value);
+      fetchWeatherApi(searchInput.value).catch(error => {
+        console.log(error.message);
+      });
     }
   }
 
@@ -28,6 +25,14 @@ function main() {
   const cityName = carContainer.querySelector(".city");
   const humidity = carContainer.querySelector(".humidity");
   const windSpeed = carContainer.querySelector(".wind-speed");
+  const errorMsg = carContainer.querySelector(".error-msg");
+
+
+  // show Error Message
+  function showErrorMessage(error) {
+    errorMsg.innerHTML = error;
+    errorMsg.classList.add("show-error");
+  }
 
   // showing weather data
   function showWeatherData(data) {
@@ -41,6 +46,7 @@ function main() {
   // validating city name
   function cityNameValidation(data) {
     if (!(data.cod === 200)) {
+      showErrorMessage(data.message);
       weatherImage.src = "Assets//imgs//noWeather.svg";
       temperature.innerHTML = "--" + "&deg;C";
       cityName.innerHTML = "---";
@@ -48,6 +54,7 @@ function main() {
       windSpeed.innerHTML = "-- km/hr";
     }
     else {
+      errorMsg.classList.remove("show-error");
       showWeatherData(data);
     }
   }
@@ -59,19 +66,14 @@ function main() {
       const data = await response.json();
       cityNameValidation(data);
     }
-    catch (err) {
-      console.error(err);
+    catch (error) {
+      console.error(error);
     }
   }
 
   // adding window event listener
   window.addEventListener("DOMContentLoaded", () => {
-    try {
-      fetchWeatherApi("Mumbai");
-    }
-    catch (err) {
-      console.error(err.message);
-    }
+    fetchWeatherApi("Mumbai");
   });
 
 
